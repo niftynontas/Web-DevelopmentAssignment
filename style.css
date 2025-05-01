@@ -1,0 +1,308 @@
+a{
+    text-decoration: none;
+}
+.container{
+min-height: 100vh;
+width:100%;
+display: flex;
+align-items: center;
+justify-content:  center;
+}
+#hero {
+    padding-top: 100px; /* Adjust based on navbar height */
+  }
+/*Header section*/
+nav {
+    background-color: #333; /* Dark background for the navbar */
+    padding: 10px 0; /* Added vertical padding */
+    position: fixed; /* Fixes navbar to the top */
+    top: 0; /* Positions navbar at the very top */
+    width: 100%; /* Ensures it spans the full width of the page */
+    z-index: 1000; /* Places navbar above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for better visibility */
+  }
+  
+  nav ul {
+    list-style-type: none; /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Aligns items horizontally */
+    justify-content: center; /* Centers the navbar links */
+    align-items: center; /* Ensures vertical alignment */
+  }
+  
+  nav ul li {
+    margin: 0 50px; /* Adds spacing between links */
+  }
+  
+  nav ul li a {
+    color: white; /* Sets text color */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 1.2rem; /* Adjusts font size for better readability */
+    padding: 5px 10px; /* Adds padding inside links */
+  }
+  
+  nav ul li a:hover {
+    background-color: yellowgreen; /* Highlight effect on hover */
+    border-radius: 5px; /* Adds rounded corners to hover effect */
+    transition: background-color 0.3s ease; /* Smooth hover animation */
+  }
+  .fa-solid.fa-moon {
+    color: white; /* Changes the icon color to white */
+    font-size: 1.5rem; /* Increases the size of the icon */
+  }
+  
+
+/* End of Header section*/
+
+
+/*Hero section*/
+#hero{
+background-image: url(background-image.jpg);
+background-size: cover;
+background-position: center top;
+position: relative;
+z-index: 1;
+}
+#hero .hero{
+    max-width: 100px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: space-between ;
+}
+
+#hero::after{
+    content: '';
+    position:absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: .6;
+    z-index: -1;
+}
+#hero h1{
+display: block;
+width:fit-content;
+font-size: 4rem;
+position:relative;
+color:transparent;
+animation: text_reveal 5s ease forwards;
+animation-delay: 1.5s;
+}
+#hero h1:nth-child(1){
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(2){
+    animation-delay: 2.5s;
+}
+    #hero h1:nth-child(3){
+        animation-delay: 3.5s;
+    }
+#hero h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: yellowgreen;
+    animation: text_reveal_box 1s ease;
+    animation-delay: 5s;
+}
+#hero h1:nth-child(1) span{
+    animation-delay: 1s;
+}
+#hero h1:nth-child(2) span{
+    animation-delay: 2s;
+}
+#hero h1:nth-child(3) span{
+    animation-delay: 3s;
+}
+
+#hero .cta:hover{
+    color:white;
+    background-color: yellowgreen;
+}
+.cta {
+        display: inline-block;
+        padding: 12px 20px;         
+        border-radius: 30px;       
+        font-size: 25px;           
+        text-decoration: none;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      
+.cta:hover {
+        transform: scale(1.05);    /* optional: adds a slight zoom effect */
+      }
+      @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+      
+      @keyframes blink {
+        50% { border-color: transparent; }
+      }
+      
+.skills p {
+        display: inline-block;
+        overflow: hidden;
+        white-space: normal;
+        border-right: 3px solid yellowgreen; /* Simulates a blinking cursor */
+        animation: typing 5s steps(1000, end) forwards, blink 0.5s infinite step-end;
+    }
+/* Typing effect */
+@keyframes typing {
+    from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+  /* Cursor blinking */
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .hero.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures text stays left, image moves right */
+    padding: 50px; /* Adjust for spacing */
+}
+
+.hero-text {
+    flex: 1; /* Allows text to take available space */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Aligns image to the right */
+}
+
+.hero-image img {
+    width: 500px; /* Adjust size as needed */
+    opacity: 0; /* Starts hidden */
+    position: relative;
+    top: -500px;
+    transform: translateX(50px); /* Slight right shift for a smooth effect */
+    animation: fadeIn 3s ease-in forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/*End of Hero section*/
+
+/*keyframes*/
+@keyframes text_reveal_box{
+50%{
+    width:100%;
+    left: 0;
+}
+100%{
+    width:0%;
+    left: 100%;
+}
+}
+@keyframes text_reveal{
+    100%{
+       color: white; 
+    }
+}
+  .skills{
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+  
+  .skill-name{
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+  
+  .skill-bar{
+    height: 14px;
+    background: #282828;
+    border-radius: 3px;
+  }
+  
+  .skill-per{
+    height: 14px;
+    background: #0a8815;
+    border-radius: 3px;
+    position: relative;
+    animation: fillBars 2.5s 1;
+  }
+  
+  .skill-per::before{
+    content: attr(per);
+    position: absolute;
+    padding: 4px 6px;
+    background: #f1f1f1;
+    border-radius: 4px;
+    font-size: 12px;
+    top: -35px;
+    right: 0;
+    transform: translateX(50%);
+  }
+  
+  .skill-per::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #f1f1f1;
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+  }
+
+  
+  @keyframes fillBars{
+    from{
+      width: 0;
+    }
+    to{
+      width: 100%;
+    }
+  }
+  .skills-section{
+    background-color: white;
+    width: 100%;
+  }
+
+
+/*end of keyframes*/
+footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+.fa-linkedin-in, .fa-whatsapp, .fa-envelope, .fa-github {
+    font-size: 30px; 
+    color: yellowgreen;
+    padding: 0 50px;
+}
+.fa-linkedin-in:hover, .fa-whatsapp:hover, .fa-envelope:hover, .fa-github:hover {
+    color: #2a7a1a; /* Hover color */
+}
